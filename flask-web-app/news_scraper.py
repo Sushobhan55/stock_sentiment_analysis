@@ -2,7 +2,6 @@ from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
-from text_pipeline import text_pipeline
 
 todays_date = time.strftime("%b-%d-%y")
 
@@ -16,6 +15,7 @@ def news_headlines(ticker):
     news_table = html.find(id='news-table')
 
     parsed_news = []
+    text_clean = []
     for row in news_table.findAll('tr'):
         text = row.a.text
         date_data = row.td.text.split(' ')
@@ -34,10 +34,4 @@ def news_headlines(ticker):
     df = pd.DataFrame(parsed_news)
     df.columns = ['date', 'time', 'title', 'link']
 
-    text = ""
-    for title in df.title:
-        text = text + title
-
-    text_clean = text_pipeline(text)
-    print(text_clean)
-
+    print(df)
