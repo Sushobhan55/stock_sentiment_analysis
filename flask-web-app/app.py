@@ -66,12 +66,11 @@ def main():
         prediction = model.predict(X)
         predictions.append(prediction)
 
-
         df["prediction"] = predictions[0].tolist()
 
         return flask.render_template('index.html',
                                      input_text=ticker.upper(),
-                                     plot = price_chart(ticker),
+                                     plot=price_chart(ticker),
                                      table=df.values.tolist(),
                                      headings=df.columns.values)
 

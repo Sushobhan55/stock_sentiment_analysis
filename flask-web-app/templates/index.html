@@ -29,7 +29,11 @@
 				{% for row in table %}
 				<tr>
 					{% for cell in row %}
-					<td>{{ cell }}</td>
+						{% if header == Title %}
+    						<td><a href="#"> {{ cell }} </a></td>
+						{% else %}
+							<td> {{ cell }} </td>
+						{% endif %}
 					{% endfor %}
 				</tr>
 				{% endfor %}
@@ -38,8 +42,8 @@
 		{% endif %}
 
 		{% if plot %}
-			{{ plot }}
-	    {% endif %}
-	</div>
+			{{ plot }} width="500" height="600"
+		{% endif %}
+
   </body>
 </html>
