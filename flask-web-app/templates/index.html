@@ -6,16 +6,15 @@
     	<title>Stock Sentiment Analysis</title>
 	  <style> body {background: powderblue
 	  				url("https://raw.githubusercontent.com/Sushobhan55/stock_sentiment_analysis/main/flask-web-app/static/img.png")
-	  				no-repeat
-	  				right
-	  				top;}
-	  	table {width: 50%}
-		h1 {color: green; font-family: "audiowide"; font-size: 40px}
+	  				no-repeat right top;}
+	  	table {width: 50%; overflow-y:scroll; height:350px; display:block;}
+		h1 {color: green; font-family: "audiowide"; font-size: 41px}
 		th, td {border: 1px solid white;border-radius: 5px;background-color: #96D4D4}
+
 
 	  </style>
 </head>
-  <body align="center" class = "center-screen">
+  <body class = "center-screen">
 		<h1> Stock Sentiment Analysis </h1>
 		<form action="{{ url_for('main') }}" method="POST">
 			<fieldset>
@@ -26,7 +25,6 @@
 			</fieldset>
 		</form>
 		{% if table %}
-
 			<table>
 				<caption><h3>Today's data for {{ input_text }}</h3></caption>
 				<tr>
@@ -36,18 +34,17 @@
 				</tr>
 				{% for row in table %}
 				<tr>
-					<td>{{ row[0] }}</td>
-					<td>{{ row[1] }}</td>
-					<td><a href = {{ row[3] }}>{{ row[2] }}</a></td>
-					<td>{{ row[4] }}</td>
+					<td><small>{{ row[0] }}</small></td>
+					<td><small>{{ row[1] }}</small></td>
+					<td><small><a href = {{ row[3] }}>{{ row[2] }}</a></small></td>
+					<td><small>{{ row[4] }}</small></td>
 				</tr>
 				{% endfor %}
 			</table>
-		</div>
 		{% endif %}
 
 		{% if plot %}
-			{{ plot }} width="500" height="600"
+			{{ plot }}
 		{% endif %}
 
   </body>

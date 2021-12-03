@@ -27,7 +27,7 @@ def main():
 
     if flask.request.method == 'POST':
         ticker = flask.request.form['ticker']
-        predictions = []
+
 
         news_table = {}
         url = 'https://finviz.com/quote.ashx?t=' + ticker
@@ -54,6 +54,7 @@ def main():
             if date == todays_date:
                 parsed_news.append([date, time, text, link])
 
+
         df = pd.DataFrame(parsed_news)
         df.columns = ['date', 'time', 'title', 'link']
 
@@ -67,6 +68,7 @@ def main():
         predictions.append(prediction)
 
         df["prediction"] = predictions[0].tolist()
+
 
         return flask.render_template('index.html',
                                      input_text=ticker.upper(),
