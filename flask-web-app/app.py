@@ -70,9 +70,9 @@ def main():
 
         return flask.render_template('index.html',
                                      input_text=ticker.upper(),
-                                     plot=price_chart(ticker),
+                                     # plot=price_chart(ticker),
                                      table=df.values.tolist(),
-                                     headings=df.columns.values)
+                                     headings=['Date', 'Time', 'Title', 'Prediction'])
 
 
 if __name__ == '__main__':
