@@ -6,4 +6,4 @@ Such events are immediateldy reported on news. The news headlines (to great exte
 
 The project "Stock Sentiment Analysis" utilizes a massive dataset of news headlines from the past ten years to predict the price movement. NLP technique that we have used here classifies the historical news headlines according to the price movement on the particular day. After the model is ready, news headlines from today (the day one uses our web-app) are passed into our model and that lists out predictions for each news headlines. Then it is upto user/trader/investor to make their decisions by analyzing the number of upward predictions and downward predictions.
 
-The project is presented in a navigable nice looking web-app.
+The project is presented in a navigable flask web-app utilizing HTML and CSS.
