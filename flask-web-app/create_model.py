@@ -3,11 +3,11 @@ import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
-df = pd.read_csv("https://raw.githubusercontent.com/Sushobhan55/stock_sentiment_analysis/main/data/is_up_cleaned.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/Sushobhan55/stock_sentiment_analysis/main/data/up_down_final")
 
-X = df['clean_title']
+X = df['title'].fillna(" ")
 
-y = df['is_up']
+y = df['movement']
 
 vectorizer = TfidfVectorizer()
 
