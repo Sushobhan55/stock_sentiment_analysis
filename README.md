@@ -1,4 +1,4 @@
-# Stock Sentiment Analysis
+# Stock Sentiment Analysis and Price Movement Prediction
 
 Stock price follows stochastic process / is random and it is affected by many variables in the market. Predecting it accurately is nearly impossible; however, closely analysing some of the factors including, but not limited to: earnings and profits, introduction of new product and change in management can give an idea of which way the stock price is moving.
 
